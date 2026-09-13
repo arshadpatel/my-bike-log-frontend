@@ -1,4 +1,4 @@
-import { NAV_MENU } from "../data/data";
+import { NAV_MENU } from "../../data/data";
 import { useState } from "react";
 
 export default function Menu() {
