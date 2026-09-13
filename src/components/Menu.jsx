@@ -1,0 +1,25 @@
+import { NAV_MENU } from "../data/data";
+import { useState } from "react";
+
+export default function Menu() {
+    const [menuItem, setMenuItem] = useState('monthly');
+    function handleMenu(menuItem) { setMenuItem(menuItem); console.log("Clicked " + menuItem); }
+    return (<>
+        {
+            NAV_MENU.map((menuGroup) => (
+                <div key={menuGroup.id} className="nav-group">
+                    <div className="nav-label">{menuGroup.label}</div>
+                    {menuGroup.items.map((groupItem) => (
+                        <div
+                            key={groupItem.id}
+                            className={`nav-item ${menuItem === groupItem.id ? 'active' : ''}`}
+                            onClick={() => handleMenu(groupItem.id)}>
+                            <span className="icon">{groupItem.icon}</span> {groupItem.name}
+                        </div>
+                    ))}
+                </div>
+            ))
+        }
+    </>
+    );
+}
