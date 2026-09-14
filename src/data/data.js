@@ -77,3 +77,60 @@ export const BIKE_DATA_CARDS = [
         label: "odometer (km)",
     },
 ];
+
+export const FORMS = [
+    {
+        id: "ride",
+        title: "🛣️ Log a ride",
+        buttonText: "Add ride",
+
+        fields: [
+            {
+                name: "date",
+                label: "Date",
+                type: "date"
+            },
+            {
+                name: "time",
+                label: "Time",
+                type: "time"
+            },
+            {
+                name: "odometer",
+                label: "Odometer reading (km)",
+                type: "number",
+                placeholder: "e.g. 12540"
+            }
+        ]
+    },
+    {
+        id: "petrol",
+        title: "⛽ Log petrol",
+        buttonText: "Add petrol",
+
+        fields: [
+            {
+                name: "date",
+                label: "Date",
+                type: "date"
+            },
+            {
+                name: "odometer",
+                label: "Current odometer (km)",
+                type: "number",
+                placeholder: "e.g. 12540"
+            },
+            {
+                name: "amount",
+                label: "Amount paid (₹)",
+                type: "number",
+                placeholder: "e.g. 330"
+            },
+            {
+                name: "pricePerLitre",
+                label: "Price per litre (₹/L)",
+                type: "number"
+            }
+        ]
+    }
+];

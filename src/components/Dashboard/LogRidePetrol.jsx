@@ -1,34 +1,67 @@
-export default function LogRidePetrol(){
-    return (
-        <div className="form-grid">
-          <div className="form-card">
-            <h3>🛣️ Log a ride</h3>
-            <div className="fg"><label>Date</label><input type="date" id="ride-date"/></div>
-            <div className="fg"><label>Time</label><input type="time" id="ride-time"/></div>
-            <div className="fg">
-              <label>Odometer reading (km)</label>
-              <input type="number" id="ride-odo" placeholder="e.g. 12540"/>
-              <div className="hint" id="ride-hint"></div>
-            </div>
-            <button className="btn btn-accent btn-full" onClick={() => console.log("Ride added")}>Add ride</button>
-          </div>
+import { useState } from "react";
+import { FORMS } from "../../data/data";
+import FormCard from "./FormCard";
 
-          <div className="form-card">
-            <h3>⛽ Log petrol</h3>
-            <div className="fg"><label>Date</label><input type="date" id="petrol-date"/></div>
-            <div className="fg"><label>Current odometer (km)</label><input type="number" id="petrol-odo"
-                placeholder="e.g. 12540"/></div>
-            <div className="fg">
-              <label>Amount paid (₹)</label>
-              <input type="number" id="petrol-amount" placeholder="e.g. 330" onInput={() => {}}/>
-              <div className="hint" id="petrol-calc-hint"></div>
-            </div>
-            <div className="fg">
-              <label>Price per litre (₹/L)</label>
-              <input type="number" id="petrol-price" value="115.81" onChange={()=> {}}/>
-            </div>
-            <button className="btn btn-accent btn-full" onClick={() => console.log("Petrol added")}>Add petrol</button>
-          </div>
-        </div>
-    );
+export default function LogRidePetrol() {
+
+  const handleChange = (event, setValues) => {
+    const { name, value } = event.target;
+    setValues(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const [ride, setRide] = useState({
+    date: new Date().toISOString().split("T")[0],
+    time: new Date().toLocaleTimeString('en-IN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    }),
+    odometer: ""
+  })
+
+  const [petrol, setPetrol] = useState({
+    date: new Date().toISOString().split("T")[0],
+    odometer: "",
+    amount: "",
+    pricePerLitre: 115.81
+  })
+
+  function addRide() {
+    console.log("Ride added", ride);
+  }
+
+
+  function addPetrol() {
+    console.log("Petrol added", petrol);
+  }
+
+  const formData = {
+    ride: {
+      values: ride,
+      onChange: (event) => handleChange(event, setRide),
+      onSubmit: addRide
+    },
+
+    petrol: {
+      values: petrol,
+      onChange: (event) => handleChange(event, setPetrol),
+      onSubmit: addPetrol
+    }
+  };
+
+  return (
+    <div className="form-grid">
+      {FORMS.map((form) => (
+        <FormCard key={form.id}
+          form={form}
+          values={formData[form.id].values}
+          onChange={formData[form.id].onChange}
+          onSubmit={formData[form.id].onSubmit}
+        />
+      ))}
+    </div>
+  );
 }
