@@ -1,11 +1,9 @@
-import { useState } from "react";
 import Rings from "./Rings";
 import BikeDataCards from "./BikeDataCards";
 import LogRidePetrol from "./LogRidePetrol";
 
 export default function Dashboard(){
     function renderDashboard(){}
-    const [month, setMonth] = useState("current Month");
     return (
         <div className="panel active" id="panel-dashboard">
         <div className="page-header">

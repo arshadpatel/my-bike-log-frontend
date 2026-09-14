@@ -1,6 +1,6 @@
 import { BIKE_DATA_CARDS } from "../../data/data";
 
-function SmallCard({ id, value, valueColor, label }) {
+function SmallCard({ value, valueColor, label }) {
     return (
         <div className="small-card">
             <div className="sc-val" style={{ color: valueColor }}>{value}</div>
