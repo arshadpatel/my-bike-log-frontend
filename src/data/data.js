@@ -134,3 +134,52 @@ export const FORMS = [
         ]
     }
 ];
+
+export const OVERALL_DATA = [
+    {
+        id: "ov-km",
+        value: "0 km",
+        label: "total km tracked"
+    },
+    {
+        id: "ov-litres",
+        value: "0 L",
+        label: "total petrol used"
+    },
+    {
+        id: "ov-spend",
+        value: "₹0",
+        label: "total petrol cost"
+    },
+    {
+        id: "ov-avg",
+        value: "—",
+        label: "overall km/litre"
+    },
+    {
+        id: "ov-max-mileage",
+        value: "—",
+        label: "best mileage of all time"
+    }
+];
+
+export const OVERALL_CHARTS = [
+    {
+        id: "chart-km",
+        title: "Km driven per month",
+        ariaLabel: "Monthly km driven bar chart",
+        dataLabel: "Monthly km data."
+    },
+    {
+        id: "chart-petrol",
+        title: "Petrol consumed per month (litres)",
+        ariaLabel: "Monthly petrol chart",
+        dataLabel: "Monthly petrol data."
+    },
+    {
+        id: "chart-spend",
+        title: "Petrol spend per month (₹)",
+        ariaLabel: "Monthly spend chart",
+        dataLabel: "Monthly spend data."
+    }
+];

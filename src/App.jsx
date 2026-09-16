@@ -2,6 +2,7 @@ import './App.css';
 import Sidebar from './components/Sidebar/Sidebar';
 import MonthlyDashboard from './components/Dashboard/MonthlyDashboard';
 import { useState } from 'react';
+import OverallDashboard from './components/Dashboard/OverallDashboard';
 
 function App() {
 
@@ -13,11 +14,14 @@ function App() {
       case 'monthly':
         return <MonthlyDashboard />;
       
+      case 'overall':
+        return <OverallDashboard />;
+        
       default:
         break;
     }
   }
-  
+
   return (
     <>
       <Sidebar activeTab = {activeTab} setActiveTab = {setActiveTab}/>

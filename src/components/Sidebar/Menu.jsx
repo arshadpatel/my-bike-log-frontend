@@ -1,5 +1,4 @@
 import { NAV_MENU } from "../../data/data";
-import { useState } from "react";
 
 export default function Menu({ activeTab, setActiveTab }) {
     function handleMenu(menuItem) { setActiveTab(menuItem); console.log("Clicked " + menuItem); }
