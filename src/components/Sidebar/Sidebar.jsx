@@ -1,7 +1,7 @@
 import AddBikeForm from "./AddBikeForm";
 import Menu from "./Menu";
 
-export default function Sidebar() {
+export default function Sidebar({ activeTab, setActiveTab }) {
     function onBikeSwitch() { }
     function createBike() { }
     function toggleAddBikeForm() { }
@@ -26,7 +26,7 @@ export default function Sidebar() {
             {/* Add new Bike Details */}
             <AddBikeForm createBike={createBike} toggleAddBikeForm={toggleAddBikeForm} />
             {/* Add Menu on the side bar (vertical navigation) */}
-            <Menu/>
+            <Menu activeTab = {activeTab} setActiveTab = {setActiveTab}/>
             
 
             <div className="sidebar-footer">
