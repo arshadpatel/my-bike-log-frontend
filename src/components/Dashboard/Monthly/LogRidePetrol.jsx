@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FORMS } from "../../data/data";
+import { FORMS } from "../../../data/data";
 import FormCard from "./FormCard";
 
 export default function LogRidePetrol() {

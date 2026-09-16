@@ -1,4 +1,4 @@
-import { OVERALL_DATA } from "../../data/data";
+import { OVERALL_DATA } from "../../../data/data";
 
 export default function OverallDataCards() {
     return (
