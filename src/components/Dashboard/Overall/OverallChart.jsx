@@ -1,4 +1,4 @@
-import { OVERALL_CHARTS } from "../../data/data";
+import { OVERALL_CHARTS } from "../../../data/data";
 
 export default function OverallChart() {
     return (

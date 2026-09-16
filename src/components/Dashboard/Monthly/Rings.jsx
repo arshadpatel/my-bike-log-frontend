@@ -1,4 +1,4 @@
-import { RINGS } from "../../data/data";
+import { RINGS } from "../../../data/data";
 
 function Ring({ id, strokeColor, valueColor, unit, label, value }) {
     return (

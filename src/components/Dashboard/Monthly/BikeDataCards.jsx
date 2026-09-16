@@ -1,4 +1,4 @@
-import { BIKE_DATA_CARDS } from "../../data/data";
+import { BIKE_DATA_CARDS } from "../../../data/data";
 
 function SmallCard({ value, valueColor, label }) {
     return (

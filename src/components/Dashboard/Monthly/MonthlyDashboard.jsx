@@ -4,7 +4,7 @@ import LogRidePetrol from "./LogRidePetrol";
 
 export default function MonthlyDashboard(){
     function renderDashboard(){}
-    
+
     return (
         <div className="panel active" id="panel-dashboard">
         <div className="page-header">

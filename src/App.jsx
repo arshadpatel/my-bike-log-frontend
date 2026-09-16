@@ -1,8 +1,8 @@
 import './App.css';
 import Sidebar from './components/Sidebar/Sidebar';
-import MonthlyDashboard from './components/Dashboard/MonthlyDashboard';
+import MonthlyDashboard from './components/Dashboard/Monthly/MonthlyDashboard';
 import { useState } from 'react';
-import OverallDashboard from './components/Dashboard/OverallDashboard';
+import OverallDashboard from './components/Dashboard/Overall/OverallDashboard';
 
 function App() {
 
@@ -16,7 +16,7 @@ function App() {
       
       case 'overall':
         return <OverallDashboard />;
-        
+
       default:
         break;
     }
