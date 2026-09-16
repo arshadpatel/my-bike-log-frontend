@@ -1,4 +1,4 @@
-import Rings from "../Rings";
+import Rings from "./Rings";
 import BikeDataCards from "./BikeDataCards";
 import LogRidePetrol from "./LogRidePetrol";
 
