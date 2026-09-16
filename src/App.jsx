@@ -1,13 +1,30 @@
 import './App.css';
 import Sidebar from './components/Sidebar/Sidebar';
-import Dashboard from './components/Dashboard/Dashboard';
+import MonthlyDashboard from './components/Dashboard/MonthlyDashboard';
+import { useState } from 'react';
 
 function App() {
-  console.log("Appp");
+
+  const [ activeTab, setActiveTab ] = useState('monthly');
+
+  const renderActiveComponent = (activeTab) => {
+    console.log(activeTab);
+    switch (activeTab) {
+      case 'monthly':
+        return <MonthlyDashboard />;
+      
+      default:
+        break;
+    }
+  }
+  
   return (
-    <><Sidebar /><main className="main">
-      <Dashboard />
-    </main></>
+    <>
+      <Sidebar activeTab = {activeTab} setActiveTab = {setActiveTab}/>
+      <main className="main">
+        { renderActiveComponent(activeTab) }
+      </main>
+    </>
   );
 }
 
